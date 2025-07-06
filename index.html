@@ -3,26 +3,52 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>COVID Cases Narrative Visualization</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Inequality Visualization</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/topojson@3"></script>
-    <script defer src="scenes/cases/barchart.js"></script>
-    <script defer src="scenes/cases/map.js"></script>
-    <script defer>
-        document.addEventListener("DOMContentLoaded", () => {
-            drawCasesBarchart("upper-chart");
-            drawCovidMap("lower-chart");
-        });
-    </script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: white;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            pointer-events: none;
+            visibility: hidden;
+            font-size: 14px;
+        }
+
+        .map-controls {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .map-controls label {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>COVID cases by month</h1>
-    <div class="graphs-container">
-        <div id="upper-chart"></div>
-        <div id="lower-chart"></div>
-    </div>
+    <h1>Scene 1: Global Spread of COVID-19</h1>
+    <p>This first scene shows how COVID-19 cases and deaths accumulated over time across countries.</p>
+
+    <div id="bar-container"></div>
+    <div id="map-container"></div>
+    <div id="tooltip"></div>
+
+    <script src="scenes/cases/barchart.js"></script>
+    <script src="scenes/cases/map.js"></script>
+    <script>
+        drawCovidMap("map-container");
+        drawBarChart("bar-container");
+    </script>
 </body>
 
 </html>
