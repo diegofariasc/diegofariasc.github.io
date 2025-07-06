@@ -1,1 +1,22 @@
-Narrative visualization
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>COVID Cases Narrative Visualization</title>
+    <link rel="stylesheet" href="scenes/cases-barchart/styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="scenes/cases-barchart/script.js"></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            drawCasesBarchart("viz");
+        });
+    </script>
+</head>
+
+<body>
+    <h1>COVID cases by month</h1>
+    <div id="viz"></div>
+</body>
+
+</html>
