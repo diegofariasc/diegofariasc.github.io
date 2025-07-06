@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <title>COVID Cases Narrative Visualization</title>
-    <link rel="stylesheet" href="scenes/cases-barchart/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script defer src="scenes/cases-barchart/script.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script defer src="scenes/cases/barchart.js"></script>
+    <script defer src="scenes/cases/map.js"></script>
     <script defer>
         document.addEventListener("DOMContentLoaded", () => {
-            drawCasesBarchart("viz");
+            drawCasesBarchart("upper-chart");
+            drawCovidMap("lower-chart");
         });
     </script>
 </head>
 
 <body>
     <h1>COVID cases by month</h1>
-    <div id="viz"></div>
+    <div class="graphs-container">
+        <div id="upper-chart"></div>
+        <div id="lower-chart"></div>
+    </div>
 </body>
 
 </html>
